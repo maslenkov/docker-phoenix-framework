@@ -19,6 +19,7 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
     && apt-get clean -y && \
     rm -rf /var/cache/apt/*
 
+RUN npm config set registry http://registry.npm.taobao.org/
 RUN npm install -g npm@3.8.9
 RUN mix local.hex --force && \
     mix local.rebar --force
