@@ -1,4 +1,4 @@
-FROM elixir:1.3.2
+FROM elixir:1.4.0
 
 MAINTAINER Shane Sveller <shane@shanesveller.com>
 
