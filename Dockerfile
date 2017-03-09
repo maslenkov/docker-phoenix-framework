@@ -12,14 +12,14 @@ RUN apt-get update -q && \
     rm -rf /var/cache/apt/*
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
-    echo 'deb https://deb.nodesource.com/node_4.x jessie main' > /etc/apt/sources.list.d/nodesource.list && \
+            echo 'deb https://deb.nodesource.com/node_7.x jessie main' > /etc/apt/sources.list.d/nodesource.list && \
     apt-get update -q && \
     apt-get install -y \
     nodejs \
     && apt-get clean -y && \
     rm -rf /var/cache/apt/*
 
-RUN npm install -g npm@3.8.9
+RUN npm install -g npm@4.3.0
 RUN npm install phantomjs-prebuilt
 RUN mix local.hex --force && \
     mix local.rebar --force
