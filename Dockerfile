@@ -20,7 +20,8 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
     rm -rf /var/cache/apt/*
 
 RUN npm install -g npm@4.3.0
-RUN npm install semver phantomjs-prebuilt
+RUN npm install semver
+RUN npm install phantomjs-prebuilt
 RUN mix local.hex --force && \
     mix local.rebar --force
 
