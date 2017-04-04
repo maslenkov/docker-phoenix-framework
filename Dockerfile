@@ -19,7 +19,6 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
     && apt-get clean -y && \
     rm -rf /var/cache/apt/*
 
-RUN npm install -g npm
 RUN npm install phantomjs-prebuilt
 RUN mix local.hex --force && \
     mix local.rebar --force
