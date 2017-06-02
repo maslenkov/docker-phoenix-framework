@@ -4,13 +4,14 @@ This image is based on the [official Elixir image](https://hub.docker.com/_/elix
 
 At the time of writing, this Dockerfile results in an image that also contains:
 
-* NodeJS 4.x (installed via [NodeSource](https://github.com/nodesource/distributions#debinstall)'s APT repository)
-* npm 3.8.9
+* NodeJS 7.10.0 (installed via [NodeSource](https://deb.nodesource.com/node_7.x)'s APT repository)
+* npm 4.2.0
+* yarn 0.24.5
 
 It also includes the following `ONBUILD` steps for convenience of use as a base image itself:
 
 * Creates a working directory for your app at `/usr/src/app`
-* Adds files like `package.json` and `brunch-config.js` and installs `npm` dependencies
+* Adds files like `package.json`, `yarn.lock` and `brunch-config.js` and installs `npm` dependencies through `yarn`
 * Sets `MIX_ENV` to `prod`
 * Copies files needed to determine Mix config and dependencies, then downloads and compiles those dependencies
 
@@ -24,9 +25,10 @@ The `latest` tag on Docker Hub should always be reasonably in sync with the tip 
 
 Want to check the current versions included in the latest image in light of future rebuilds?
 
-* `docker run -it --rm shanesveller/phoenix-framework node -v`
-* `docker run -it --rm shanesveller/phoenix-framework npm -v`
-* `docker run -it --rm shanesveller/phoenix-framework mix hex.info`
+* `docker run -it --rm timka/phoenix-framework node -v`
+* `docker run -it --rm timka/phoenix-framework npm -v`
+* `docker run -it --rm timka/phoenix-framework yarn --version`
+* `docker run -it --rm timka/phoenix-framework mix hex.info`
 
 # Caveats
 
